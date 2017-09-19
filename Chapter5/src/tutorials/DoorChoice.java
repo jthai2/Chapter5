@@ -19,6 +19,9 @@ public class DoorChoice {
 		if(doorChoice == 1)
 		{
 			JOptionPane.showMessageDialog(null, "You win Nothing|| HAHAHAHAH!");
+			//How many tacos
+			//math * ordered = whatever
+			//The cost this blank blank
 		}
 		if(doorChoice == 2)
 		{
