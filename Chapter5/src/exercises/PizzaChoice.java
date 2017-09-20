@@ -8,11 +8,11 @@ public class PizzaChoice {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String choiceYes, toppingsChoice, size, pizzaKind, choiceHotDog;
+		String choiceYes, toppingsChoice, size, pizzaKind;
 	
 		System.out.print("Would you like a pizza? Yes or No?>>>>> ");
 		choiceYes = input.nextLine();
-		System.out.print("Would you like a hotdog? Yes or No?>>>>> ");
+		System.out.print("Would you like a hot dog? Yes or No?>>>> ");
 		choiceYes = input.nextLine();
 		
 		if("Yes".equalsIgnoreCase(choiceYes) ||"Y".equalsIgnoreCase(choiceYes))
