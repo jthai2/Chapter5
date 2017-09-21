@@ -25,7 +25,6 @@ public class AscendingAndDescending {
 	}
 		else 
 			if(b >= a && b >=c) {
-			
 				high = b;
 			}
 			else
