@@ -7,6 +7,7 @@ public class AscendingAndDescending {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int a, b, c;
+		int low, medium, high;
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -18,8 +19,48 @@ public class AscendingAndDescending {
 		
 		System.out.println("Please enter one more number>>> ");
 		c = input.nextInt();
-		
-		if(a => b
+//		High
+		if(a >= b && a >= c) {
+			high = a;
 	}
-
+		else 
+			if(b >= a && b >=c) {
+			
+				high = b;
+			}
+			else
+			{
+				high = c;
+			}
+//		Medium
+		if(a >= b && a <= c) {
+			 medium = a;
+			}
+		 else 
+			 if(b >= a && b<= c) {
+			 	medium = b;
+			}
+			else 
+			 	if(b <= a && b >= c)
+			 	{
+			 	medium = b; 
+			 	}
+			 else
+			 	{
+			 	medium = c; 
+			 	}
+//		Low
+		if(a <= b && a <= c) {
+			 low = a;
+			}
+		else 
+			if(b <= a && b <= c) {
+			 	low = b; 
+			 	}
+			  else
+			 	{
+			 	low = c; 
+			 	}
+			 	System.out.print("Highest numbrt to lowest is: " + high + ", " + medium + ", " + low);
+		}
 }
