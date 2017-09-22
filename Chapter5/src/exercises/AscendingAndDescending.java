@@ -46,7 +46,7 @@ public class AscendingAndDescending {
 			 	}
 			 else
 			 	{
-			 	medium = c; 
+			 	medium = a; 
 			 	}
 //		Low
 		if(a <= b && a <= c) {
@@ -60,6 +60,6 @@ public class AscendingAndDescending {
 			 	{
 			 	low = c; 
 			 	}
-			 	System.out.print("Highest numbrt to lowest is: " + high + ", " + medium + ", " + low);
+			 	System.out.print("Highest number to lowest is: " + high + ", " + medium + ", " + low);
 		}
 }
