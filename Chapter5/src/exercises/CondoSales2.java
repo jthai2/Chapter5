@@ -1,41 +1,67 @@
 package exercises;
 
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class CondoSales2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int parkView = 150000;
-		int golfCourseView = 170000;
-		int lakeView = 210000;
-		String usersChoiceString;
-		int usersChoice;
-		int price = 0;
-		
-		usersChoiceString = JOptionPane.showInputDialog(null, 
-				"Choose 1 for park view, 2 for golf course view, and 3 for lake view\n1 - park view" +
-		         "\n2 - golf course view" + "\n3 - lake view");
-		usersChoice= Integer.parseInt(usersChoiceString);
-		if(usersChoice == 1){
-	         price = parkView;
-	      }
-		if(usersChoice == 2)
-	      {
-	         price = golfCourseView;
-	         }
-		if (usersChoice == 3)
-		{
-			price = price + lakeView;
-		}
-		usersChoiceString = JOptionPane.showInputDialog(null,"1 for garage or 2 for parking space:\n1 - garage\n2 - parking space");
-		 usersChoice = Integer.parseInt(usersChoiceString);
-		 if (usersChoice == 1)
-	          price = price + 5000;
-		 if (usersChoice == 2)
-			 price = price;
-		 JOptionPane.showMessageDialog(null,"The price of condominium is: $" + price);
-		
-	}
+		int viewChoice;
+		int price;
+		String view;
+		final int parkView = 1;
+		final int golfCourseView = 2;
+		final int lakeView = 3;
+		final String park = "park view";
+		final String golf = "golf course view";
+		final String lake = "lake view";
 
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Which condo do you want>>> " + parkView + ". " + park + " " + 
+		golfCourseView + ". " + golf + " or " + lakeView	+ ". " + lake + ".");
+		viewChoice = input.nextInt();
+		
+
+		switch (viewChoice) 
+		{
+		case parkView:
+			view = park;
+			price = 150000;
+			break;
+		case golfCourseView:
+			view = golf;
+			price = 170000;
+			break;
+		case lakeView:
+			view = lake;
+			price = 210000;
+			break;
+		default:
+			view = "invalid";
+			price = 0;
+		}
+
+		String garage = "You will get a parking space. ";
+		if (viewChoice >= parkView && viewChoice <= lakeView) 
+		{
+			System.out.println("Would you like>>> 1. Garage or 2. Parking space?");
+			int garageOrNot = input.nextInt();
+
+			switch (garageOrNot) 
+			{
+			case 1:
+				price += 5000;
+				garage = "You will get a garage.";
+				System.out.println(garage + " $5000 has been added.");
+				break;
+			case 2:
+				System.out.println(garage);
+				break;
+			default:
+				System.out.println("Input not recognized. " + garage);
+			}
+
+		System.out.println("\nYou chosen the condo with the " + view + " for $" + price + ".\n" + garage);
+		}
+	}
 }
