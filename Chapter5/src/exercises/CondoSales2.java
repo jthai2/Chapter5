@@ -4,64 +4,62 @@ import java.util.Scanner;
 
 public class CondoSales2 {
 
+	static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		int viewChoice;
-		int price;
-		String view;
-		final int parkView = 1;
-		final int golfCourseView = 2;
-		final int lakeView = 3;
-		final String park = "park view";
-		final String golf = "golf course view";
-		final String lake = "lake view";
-
-		Scanner input = new Scanner(System.in);
+		int viewChosen;
 		
-		System.out.println("Which condo do you want>>> " + parkView + ". " + park + " " + 
-		golfCourseView + ". " + golf + " or " + lakeView	+ ". " + lake + ".");
-		viewChoice = input.nextInt();
+		System.out.println("Choose>>> 1. For park view 2. For golf course view or 3. For lake view.");
+		viewChosen = input.nextInt();
 		
-
-		switch (viewChoice) 
+		if(viewChosen == 1)
 		{
-		case parkView:
-			view = park;
-			price = 150000;
-			break;
-		case golfCourseView:
-			view = golf;
-			price = 170000;
-			break;
-		case lakeView:
-			view = lake;
-			price = 210000;
-			break;
-		default:
-			view = "invalid";
-			price = 0;
+			System.out.println("Park view condo chosen for $150,000.");
+			garageOrParkingSpace();
 		}
-
-		String garage = "You will get a parking space. ";
-		if (viewChoice >= parkView && viewChoice <= lakeView) 
+		else if(viewChosen == 2)
 		{
-			System.out.println("Would you like>>> 1. Garage or 2. Parking space?");
-			int garageOrNot = input.nextInt();
-
-			switch (garageOrNot) 
-			{
-			case 1:
-				price += 5000;
-				garage = "You will get a garage.";
-				System.out.println(garage + " $5000 has been added.");
-				break;
-			case 2:
-				System.out.println(garage);
-				break;
-			default:
-				System.out.println("Input not recognized. " + garage);
-			}
-
-		System.out.println("\nYou chosen the condo with the " + view + " for $" + price + ".\n" + garage);
+			System.out.println("Golf course view condo chosen for $170,000.");
+			garageOrParkingSpace();
+		}
+		else if(viewChosen == 3)
+		{
+			System.out.println("Lake view condo chosen for $210,000.");
+			garageOrParkingSpace();
+		}
+		else
+		{
+			System.out.println("Price is $0");
 		}
 	}
+	public static void garageOrParkingSpace() 
+	{
+		int choice;
+		System.out.println("\nChoose>>> 1. For a garage or 2. For a parking space.");
+		choice = input.nextInt();
+		
+		if(choice == 1)
+		{
+			System.out.println("$5,000 has been added to your total price");
+		}
+		if(choice == 2)
+		{
+			int parkingSpace;
+			System.out.println("You chose parking space.");
+			System.out.println("\nPlease choose the number for your parking space>>> 1-20 ");
+			parkingSpace = input.nextInt();
+			
+			if(parkingSpace > 20 || parkingSpace < 1)
+			{
+				System.out.println("Parking space number invalid. Your cost has been reset to the cost of your condo.");
+			}
+			else
+			{
+				System.out.println("Parking space valid");
+			}
+			
+		}
+		
+	}
+
 }
