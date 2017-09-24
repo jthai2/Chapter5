@@ -51,7 +51,7 @@ public class CondoSales2 {
 			
 			if(parkingSpace > 20 || parkingSpace < 1)
 			{
-				System.out.println("Parking space number invalid. Your cost has been reset to the cost of your condo.");
+				System.out.println("Parking space number invalid. Price has been reset to the cost of your condo.");
 			}
 			else
 			{
