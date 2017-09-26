@@ -1,88 +1,57 @@
 package gameZone;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 import java.util.Random;
 
 public class RockPaperScissors {
 
-	private static Scanner input;
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int R = 1;
-		int P = 2;
-		int S = 3;
-		int choice;
-		int computer;
-		String computerChoice;
+		Random rand = new Random();
+		int random = rand.nextInt(3) + 1;
+		String choice;
+		int choiceNumber;
 		
-		System.out.println("Enter your choice >>>>>");
-		choice = input.nextInt();
+		choice = JOptionPane.showInputDialog(null, "Enter 1 for paper, 2 for rock, and 3 for scissors.");
+		choiceNumber = Integer.parseInt(choice);
 		
-		Scanner input = new Scanner(System.in);
-		Random generator = new Random(); 
-		
-		computer = generator.nextInt(3)+1;
-		
-		if (computer == 1) 
-		       computerChoice = "R"; 
-		   else if (computer == 2) 
-		       computerChoice = "P"; 
-		   else if (computer == 3) 
-		       computerChoice = "S"; 
-
-		
-		if(1 == choice)
+		if(choiceNumber == 1 && random == 1)
 		{
-			if(R==computer)
-			{
-				System.out.println("You tie");
-			}
-			else if(R==2)
-				if(computer==S)
-			{
-				System.out.println("You lose");
-			}
-			else if(R==1)
-				if(computer==S)
-			{
-				System.out.println("You win");
-			}
+			JOptionPane.showMessageDialog(null, "Paper against paper = tie!");
 		}
-		if(2 == choice)
+		if(choiceNumber == 1 && random == 2)
 		{
-			if(P==computer)
-			{
-				System.out.println("You tie");
-			}
-			else if(P==2)
-				if(computer==1)
-			{
-				System.out.println("You lose");
-			}
-			else if(P==1)
-				if(computer==3)
-			{
-				System.out.println("You win");
-			}
-		if(3 == choice)
+			JOptionPane.showMessageDialog(null, "Paper against rock = you win!");
+		}
+		if(choiceNumber == 1 && random == 3)
 		{
-			if(S==computer)
-			{
-				System.out.println("You tie");
-			}
-			else if(S==2)
-				if(computer==1)
-			{
-				System.out.println("You win");
-			}
-			else if(S==1)
-				if(computer==2)
-			{
-				System.out.println("You lose");
-			}
+			JOptionPane.showMessageDialog(null, "Paper against scissors = you lose!");
 		}
+		if(choiceNumber == 2 && random == 1)
+		{
+			JOptionPane.showMessageDialog(null, "Rock against paper = you lose!");
 		}
+		if(choiceNumber == 2 && random == 2)
+		{
+			JOptionPane.showMessageDialog(null, "Rock against rock = tie!");
+		}
+		if(choiceNumber == 2 && random == 3)
+		{
+			JOptionPane.showMessageDialog(null, "Rock against scissors = you win!");
+		}
+		if(choiceNumber == 3 && random == 1)
+		{
+			JOptionPane.showMessageDialog(null, "Scissors against paper = you win!");
+		}
+		if(choiceNumber == 3 && random == 2)
+		{
+			JOptionPane.showMessageDialog(null, "Scissors against rock = you lose!");
+		}
+		if(choiceNumber == 3 && random == 3)
+		{
+			JOptionPane.showMessageDialog(null, "Scissors against scissors = tie!");
+		}
+			
+		
 	}
 
 }
